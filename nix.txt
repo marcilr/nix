@@ -1,0 +1,5 @@
+nix.txt
+Created Mon Aug 27 17:30:28 AKDT 2018
+Copyright (C) 2018 by Raymond E. Marcil <marcilr@gmail.com>
+
+Unix-like computer operating systems
