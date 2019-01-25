@@ -15,5 +15,6 @@ Security, Sys admin last updated June 27, 2009
 https://www.cyberciti.biz/tips/top-linux-monitoring-tools.html
 
 nixCraft
-Linux Tips, Hacks, And Ideas in Blog Format
+Linux and Unix tutorials for new and seasoned sysadmin (1/25/2019)
+Linux Tips, Hacks, And Ideas in Blog Format (8/27/2018)
 https://www.cyberciti.biz
