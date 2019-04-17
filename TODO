@@ -4,6 +4,8 @@ by Raymond E. Marcil <marcilr@gmail.com>
 
 
 +++ Wed Apr 17 07:26:56 AKDT 2019 - Thinks of creating a
-package-managers repo with sub-repos like yum, apt-get, aptitude, etc.
+package-managers repo with sub-repos like yum, apt-get,
+aptitude, etc.
+
 Place to put commands like 'yum check-update' and such.
 
