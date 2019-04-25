@@ -8,7 +8,10 @@ Unix-like computer operating systems related links
 
 Links
 =====
-10 Useful Free Linux eBooks for Newbies and Administrators
+4 Free Shell Scripting eBooks   <=== Download
+https://www.tecmint.com/free-linux-shell-scripting-books/
+
+10 Useful Free Linux eBooks for Newbies and Administrators   <=== Download
 by Ravi Saive | Published: December 9, 2013 | Last Updated: September 15, 2015
 https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/
 
@@ -22,3 +25,8 @@ nixCraft
 Linux and Unix tutorials for new and seasoned sysadmin (1/25/2019)
 Linux Tips, Hacks, And Ideas in Blog Format (8/27/2018)
 https://www.cyberciti.biz
+
+Vi/Vim Editor BEGINNER'S GUIDE Learn vi/vim as a Full Text Editor 
+Pretty good page...
+https://www.tecmint.com/vi-editor-usage/
+
