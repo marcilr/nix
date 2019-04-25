@@ -8,6 +8,10 @@ Unix-like computer operating systems related links
 
 Links
 =====
+10 Useful Free Linux eBooks for Newbies and Administrators
+by Ravi Saive | Published: December 9, 2013 | Last Updated: September 15, 2015
+https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/
+
 20 Linux System Monitoring Tools Every SysAdmin Should Know
 Posted on June 27, 2009 in Categories CentOS, Debian Linux,
 Howto, Linux, Monitoring, Networking, RedHat/Fedora Linux,
