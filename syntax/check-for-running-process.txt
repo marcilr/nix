@@ -1,0 +1,36 @@
+check-for-running-process.txt
+Created Wed Sep 25 08:39:00 AKDT 2019
+Copyright (C) 2019 by Raymond E. Marcil <marcilr@gmail.com>
+
+
+Check for running process
+
+
+In discussion at State of Alaska DNR OIT on how to check if
+java is runing used:
+
+  (ps -ef | grep java)  If so, “lsof -p (java process #) | grep jre
+
+For example:
+
+$ ssh tomtest
+Last login: Thu Sep  5 21:14:11 2019 from 204.*.*.*
+$  ps -ef | grep java
+tomcat   19578     1  0 07:25 ?        00:00:14 /usr/bin/java -server -Dorg.opends.server.scriptName=start-ds org.opends.server.core.DirectoryServer --configClass org.opends.server.extensions.ConfigFileHandler --configFile /usr/local/OpenDS/config/config.ldif
+root     19675     1  0 07:25 ?        00:00:35 /usr/local/softwareag/jvm/jvm/jre/bin/java -Dcom.sabratec.centrasite.lib.dir=../common/lib -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=conf/logging.properties -Dcom.sabratec.gxhome=/usr/local/softwareag/ApplinX -server -Xmx1024m -Dcom.sabratec.useicon=true -Dcom.sabratec.license=/common/LKey/ -Djavax.net.ssl.trustStore=/usr/local/softwareag/jvm/jvm/jre/lib/security/cacerts -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Djava.util.logging.config.file=/usr/local/softwareag/ApplinX/conf/logging.properties -Djava.endorsed.dirs=/usr/local/softwareag/ApplinX/tomcat/common/endorsed -classpath :/usr/local/softwareag/ApplinX/tomcat/bin/bootstrap.jar:/usr/local/softwareag/ApplinX/tomcat/bin/commons-logging-api.jar -Dcatalina.base=/usr/local/softwareag/ApplinX -Dcatalina.home=/usr/local/softwareag/ApplinX/tomcat -Djava.io.tmpdir=/usr/local/softwareag/ApplinX/temp org.apache.catalina.startup.Bootstrap start
+tomcat   19889     1  0 07:25 ?        00:00:00 jsvc.exec -java-home /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el6_10.x86_64/jre/ -user tomcat -pidfile /usr/local/tomtest/tomcat-70/logs/catalina-daemon.pid -wait 10 -outfile /usr/local/tomtest/tomcat-70/logs/catalina.out -errfile &1 -classpath /usr:/usr/lib64:/usr/local/tomtest/tomcat-70/bin:/usr/share/tomcat7/bin/bootstrap.jar:/usr/share/tomcat7/bin/commons-daemon.jar:/usr/local/tomtest/tomcat-70/bin/tomcat-juli.jar -Djava.util.logging.config.file=/usr/local/tomtest//tomcat-70/conf/logging.properties -Djava.awt.headless=true -Dsun.lang.ClassLoader.allowArraySyntax=true -Djava.library.path=/usr/share/tomcat7/lib:/usr/local/jws-3.0/tomcat7/lib -Dcom.sun.management.jmxremote -Dcom.sun.management.enableThreadContentionMonitoring=true -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false -Djava.rmi.server.hostname=204.89.222.157 -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Xmx1024m -Dcom.sun.management.jmxremote.port=7099 -Djava.endorsed.dirs= -Dcatalina.base=/usr/local/tomtest/tomcat-70 -Dcatalina.home=/usr/share/tomcat7 -Djava.io.tmpdir=/usr/local/tomtest/tomcat-70/temp org.apache.catalina.startup.Bootstrap
+...
+$
+
+# lsof -p 19578 | grep jre
+java    19578 tomcat  txt    REG              253,1    10576   18380 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el6_10.x86_64/jre/bin/java
+java    19578 tomcat  mem    REG              253,1    62648   18732 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el6_10.x86_64/jre/lib/amd64/jli/libjli.so
+java    19578 tomcat  mem    REG              253,1    47480   18588 /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el6_10.x86_64/jre/lib/amd64/libsunec.so
+...
+#
+
+Found the later lsof must be run as root.  The latter clearly display the
+jdk used as:
+  java-1.8.0-openjdk-1.8.0.222.b10-0.el6_10.x86_64/
+
+Very nice.
